@@ -1,4 +1,2 @@
 import java.awt.geom.*;
-public class Square implements DrawingObject{
-
-}
+// public class Square implements DrawingObject{}
