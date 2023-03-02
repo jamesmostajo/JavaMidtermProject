@@ -9,13 +9,13 @@ public class SceneFrame{
     public SceneFrame(int w, int h){
         width = w; height = h;
         frame = new JFrame();
-        sCanvas = new SceneCanvas();
+        sCanvas = new SceneCanvas(width, height);
     }
     public void setUpGUI(){
-        // frame.setSize(width, height);
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Midterm Project - Mostajo, James Ivan - 224396"); 
-        frame.setSize(1024, 768);
+
         frame.add(sCanvas);
         frame.pack();
 
