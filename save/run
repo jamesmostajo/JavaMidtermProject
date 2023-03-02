@@ -1,0 +1,8 @@
+TO COMPILE ALL:
+javac -d ClassFiles *.java 
+
+TO RUN:
+java -cp ClassFiles SceneStarter
+
+
+SAVE FIRST BEFORE COMPILE
