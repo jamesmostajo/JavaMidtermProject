@@ -19,15 +19,18 @@ public class SceneCanvas extends JComponent{
         g2d.setRenderingHints(rh);
 
         //this part is a test and not part of the final program
-        // Rectangle2D.Double bg = new Rectangle2D.Double(0,0, width, height);
-        // g2d.setColor(Color.BLUE); g2d.fill(bg);
-
+        Square bg = new Square(0,0, width, height, Color.BLUE); bg.draw(g2d);
+        Line l1 = new Line(0,0,100, 100, 5, Color.BLACK); l1.draw(g2d);
         // Path2D.Double line = new Path2D.Double();
         // line.moveTo(width, height); line.lineTo(100,100);
         // g2d.setColor(Color.WHITE); g2d.draw(line);
         // end of test
         
-        Square sq1 = new Square(0,0, 100,(Color.BLUE));
-        sq1.draw(g2d);
+        // Square sq1 = new Square(0,0, 100,(Color.CYAN)); sq1.draw(g2d);
+        // Square sq2 = new Square(0, 150, 100, 150,(Color.CYAN)); sq2.draw(g2d);
+        // Circle c1 = new Circle(50,50, 20, Color.RED); c1.draw(g2d);
+        // Circle c2 = new Circle(100, 100, 30, 40, Color.GREEN); c2.draw(g2d);
+        
+        
     }
 }
