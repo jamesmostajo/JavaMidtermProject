@@ -23,7 +23,7 @@ public class Circle implements DrawingObject{
     }
 
     public void draw(Graphics2D g2d){
-        Ellipse2D.Double square = new Ellipse2D.Double(xPos, yPos, xSize, ySize);
-        g2d.setColor(color); g2d.fill(square);
+        Ellipse2D.Double circle = new Ellipse2D.Double(xPos, yPos, xSize, ySize);
+        g2d.setColor(color); g2d.fill(circle);
     }
 }
