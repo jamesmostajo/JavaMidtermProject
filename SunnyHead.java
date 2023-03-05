@@ -2,6 +2,9 @@ import java.awt.geom.*;
 import java.awt.*;
 
 public class SunnyHead implements DrawingObject{
+    public final static double INTERNAL_SCALE = 155.25;
+    public final static double INTERNAL_X = 71;
+    public final static double INTERNAL_Y = 79;
     public Circle head;
     public Mane mane;
 
@@ -12,20 +15,23 @@ public class SunnyHead implements DrawingObject{
 
     public SunnyMouth sunnyMouth;
 
-    public SunnyHead(double x, double y, double scale){
+    public Circle nose;
+
+    public SunnyHead(double x, double y, float scale){
         // 71, 79, 155.25
-        head = new Circle(x,y,scale, new Color(255,219,118));
-        mane = new Mane(x-71, y-79,1);
+        
+        head = new Circle(x,y,(scale*INTERNAL_SCALE), new Color(255,219,118));
+        mane = new Mane(x-(scale*INTERNAL_X), y-(scale*INTERNAL_Y),scale);
 
-        double faceMiddle = x + (scale)/2;
-        double eyeDist = 30;
+        double faceMiddle = x + scale*INTERNAL_SCALE/2;
+        double eyeDist = scale*30;
+        // I won't simplify the equations for clarity's sake
+        leftEye = new Circle(faceMiddle-((scale*35)+eyeDist), y+(scale*40), scale*35, Color.WHITE);
+        rightEye = new Circle(faceMiddle+eyeDist, y+(scale*40), scale*35, Color.WHITE);
+        leftPupil = new Circle((faceMiddle-((scale*35)+eyeDist))+(scale*5), y+(scale*45), scale*25, Color.BLACK);
+        rightPupil = new Circle((faceMiddle+eyeDist)+(scale*5), y+(scale*45), scale*25, Color.BLACK);
 
-        leftEye = new Circle(faceMiddle-(30+eyeDist), y+40, 35, Color.WHITE);
-        rightEye = new Circle(faceMiddle+eyeDist, y+40, 35, Color.WHITE);
-        leftPupil = new Circle((faceMiddle-(30+eyeDist))+5, y+45, 25, Color.BLACK);
-        rightPupil = new Circle((faceMiddle+eyeDist)+5, y+45, 25, Color.BLACK);
-
-        sunnyMouth = new SunnyMouth(x, y, faceMiddle, eyeDist);
+        sunnyMouth = new SunnyMouth(x+(scale*INTERNAL_X), y+(scale*INTERNAL_Y), faceMiddle, eyeDist, scale);
     }
     public void draw(Graphics2D g2d){
         mane.draw(g2d);
@@ -34,8 +40,8 @@ public class SunnyHead implements DrawingObject{
         rightEye.draw(g2d);
         leftPupil.draw(g2d);
         rightPupil.draw(g2d);
-
         sunnyMouth.draw(g2d);
+        
       
     }
 }

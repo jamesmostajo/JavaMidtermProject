@@ -31,7 +31,7 @@ public class SceneCanvas extends JComponent{
         // Circle c1 = new Circle(50,50, 20, Color.RED); c1.draw(g2d);
         // Circle c2 = new Circle(100, 100, 30, 40, Color.GREEN); c2.draw(g2d);
         
-        SunnyHead sunnyHead= new SunnyHead(250, 250, 155.25);
+        SunnyHead sunnyHead= new SunnyHead(100, 100, 1);
         sunnyHead.draw(g2d);
     }
 }

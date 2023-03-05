@@ -7,9 +7,9 @@ public class Line implements DrawingObject{
     private double xStart; private double yStart;
     private double xEnd; private double yEnd;
     private Color color;
-    private int thickness;
+    private float thickness;
 
-    public Line(double x1, double y1, double x2, double y2, int brushSize, Color c){
+    public Line(double x1, double y1, double x2, double y2, float brushSize, Color c){
         xStart = x1; yStart = y1;
         xEnd = x2; yEnd = y2;
         thickness = brushSize;
