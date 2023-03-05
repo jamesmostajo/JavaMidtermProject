@@ -36,8 +36,8 @@ public class SunnyHead implements DrawingObject{
     public void draw(Graphics2D g2d){
         mane.draw(g2d);
         head.draw(g2d);
-        leftEye.draw(g2d);
-        rightEye.draw(g2d);
+        leftEye.drawOutline(g2d);
+        rightEye.drawOutline(g2d);
         leftPupil.draw(g2d);
         rightPupil.draw(g2d);
         sunnyMouth.draw(g2d);

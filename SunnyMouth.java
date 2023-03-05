@@ -22,7 +22,7 @@ public class SunnyMouth implements DrawingObject{
         mouthLine2.curveTo(faceMiddle, y+(eyeDist*1.35), faceMiddle, y+(eyeDist*1.35), (faceMiddle+eyeDist), y+eyeDist);
     }
     public void draw(Graphics2D g2d){
-        snout.draw(g2d);
+        snout.drawOutline(g2d);
 
         mouthLine1.draw(g2d);
         g2d.setStroke(new BasicStroke(scale*1.5f));

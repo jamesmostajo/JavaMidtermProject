@@ -2,8 +2,10 @@ import javax.swing.*;
 import java.awt.geom.*;
 import java.awt.*;
 public class Mane implements DrawingObject{
+    float scale;
     Path2D.Double mane = new Path2D.Double();
-    public Mane(double x, double y, double scale){
+    public Mane(double x, double y, float scale){
+        this.scale = scale;
         // make it more editable
         mane.moveTo(x+scale*(149.0), y+scale*(232.0));
         mane.curveTo(x+scale*(149.0), y+scale*(232.0), x+scale*(97.0), y+scale*(272.0), x+scale*(31.0), y+scale*(237.0));
@@ -25,5 +27,8 @@ public class Mane implements DrawingObject{
     public void draw(Graphics2D g2d){
         g2d.setPaint(new Color(211, 131, 15));
         g2d.fill(mane);
+        g2d.setColor(Color.BLACK);
+        g2d.setStroke(new BasicStroke(scale*.75f));
+        g2d.draw(mane);
     }
 }
