@@ -4,7 +4,7 @@
 	 viewBox="0 0 1064 768" style="enable-background:new 0 0 1064 768;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#020000;}
-	.st1{fill:none;stroke:#C10000;stroke-miterlimit:10;}
+	.st1{fill:#937700;}
 </style>
 <g id="Layer_1">
 	<g id="Layer_1_00000148652857199082480970000014644352403811727530_">
@@ -15,6 +15,6 @@
 	</g>
 </g>
 <g id="Layer_2">
-	<path class="st1" d="M170.1,48H60c0,0-34.6,356,297.7,354S669,48,669,48H170.1z"/>
+	<path class="st1" d="M126.5,48H59.6c0,0-21,356,181,354S429.8,48,429.8,48H126.5z"/>
 </g>
 </svg>

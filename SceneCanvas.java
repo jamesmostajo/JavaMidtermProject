@@ -21,7 +21,14 @@ public class SceneCanvas extends JComponent{
         Square bg = new Square(0,0,width, height, new Color(151,235,255));
         bg.draw(g2d);
         
-        Wood hull = new Wood(93, 150, 0.6f);
+        UpperDeck ud = new UpperDeck(0,0,1);
+        ud.draw(g2d);
+
+        Wood hull = new Wood(40, 500, 0.65f);
         hull.draw(g2d);        
+
+        // JollyRogerMouth mouth = new JollyRogerMouth(90, 90, 1);
+        // mouth.draw(g2d);
+      
     }
 }

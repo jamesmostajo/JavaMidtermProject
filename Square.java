@@ -24,4 +24,9 @@ public class Square implements DrawingObject{
         Rectangle2D.Double square = new Rectangle2D.Double(xPos, yPos, xSize, ySize);
         g2d.setColor(color); g2d.fill(square);
     }
+    public void drawOutline(Graphics2D g2d){
+        Rectangle2D.Double square = new Rectangle2D.Double(xPos, yPos, xSize, ySize);
+        g2d.setColor(color); g2d.fill(square);
+        g2d.setColor(Color.BLACK); g2d.draw(square); 
+    }
 }
