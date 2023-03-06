@@ -19,8 +19,9 @@ public class Front implements DrawingObject{
     public void draw(Graphics2D g2d){
         rim.draw(g2d);
         rimHole.draw(g2d);
-        Crossbones cb = new Crossbones(x+(scale*60), y+(scale*50), scale);
-        cb.draw(g2d);
+        
+        Bone frontCrossbone = new Bone(x+(scale*210),y+(scale*90),(scale*1.25f), new Color(226,226,226));
+        frontCrossbone.draw(g2d);
 
         SunnyHead sunnyHead= new SunnyHead(x+(scale*133), y+(scale*1), scale);
         sunnyHead.draw(g2d);
