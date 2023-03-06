@@ -27,12 +27,10 @@ public class Wood implements DrawingObject{
         g2d.setColor(new Color(147,119,0));
         g2d.fill(wood);
 
-        // 93, 150
-
         Bow bow = new Bow(x+(scale*77),y,scale);
         bow.draw(g2d);
 
-        Front fr = new Front(x+(scale*157),y+(scale*100),scale*1f);
-        fr.draw(g2d);
+        Front front = new Front(x+(scale*157),y+(scale*100),scale*1f);
+        front.draw(g2d);
     }
 }

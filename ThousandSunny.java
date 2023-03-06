@@ -12,13 +12,17 @@ public class ThousandSunny implements DrawingObject{
         shipX = x;
         shipY = y;
         shipSz = scale;
-        
-        sailsAndPosts = new UpperDeck(x+0,y+0,(scale*1f));
-
-        shipProper = new Wood(x+(scale*40), y+(scale*500), (scale*0.65f));
     }
     public void draw(Graphics2D g2d){
+        sailsAndPosts = new UpperDeck(shipX+0,shipY+0,(shipSz*1f));
+        shipProper = new Wood(shipX+(shipSz*40), shipY+(shipSz*500), (shipSz*0.65f));
         sailsAndPosts.draw(g2d);
         shipProper.draw(g2d);
-    }   
+    }
+    public void adjustX(double dx){
+        shipX += dx;
+    }
+    public void adjustSz(float dSz){
+        shipSz += dSz;
+    }
 }

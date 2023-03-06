@@ -14,7 +14,7 @@ public class UpperDeck implements DrawingObject{
 
     public Line flagpole;
 
-    public Square flagC;
+    public Square upperFlag;
     
     public JollyRoger jollyRoger1;
     public JollyRoger jollyRoger2;
@@ -33,7 +33,7 @@ public class UpperDeck implements DrawingObject{
 
         flagpole = new Line(x+(scale*291.4), y+(scale*124.3), x+(scale*291.4), y+(scale*150.7), scale*7.5f, new Color(147,119,0));
 
-        flagC = new Square(x+(scale*283.9),y+(scale*89.3),(scale*70), (scale*35), Color.BLACK);
+        upperFlag = new Square(x+(scale*283.9),y+(scale*89.3),(scale*70), (scale*35), Color.BLACK);
         
         jollyRoger1 = new JollyRoger(x+(scale*137),y+(scale*215),(scale*1f));
         
@@ -48,7 +48,7 @@ public class UpperDeck implements DrawingObject{
         flagA.draw(g2d);
         flagB.draw(g2d);
         flagpole.draw(g2d);
-        flagC.draw(g2d);
+        upperFlag.draw(g2d);
 
         jollyRoger1.draw(g2d);
         jollyRoger2.draw(g2d);
