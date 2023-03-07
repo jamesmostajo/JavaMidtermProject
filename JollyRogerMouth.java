@@ -10,6 +10,11 @@ public class JollyRogerMouth implements DrawingObject{
         this.x = x;
         this.y = y;
         this.scale = scale;
+        
+        /*
+        To render the shape of the mouth:
+        https://www.desmos.com/calculator/ebdtbxgbq0
+        **/
 
         mouth.moveTo(x+(scale*120.20), y+(scale*351.10));
         mouth.curveTo(x+(scale*120.20), y+(scale*351.10), x+(scale*81.00), y+(scale*440.80), x+(scale*164.80), y+(scale*440.80));

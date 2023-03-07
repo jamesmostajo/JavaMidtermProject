@@ -3,5 +3,6 @@ public class SceneStarter{
         SceneFrame sceneFrame = new SceneFrame(1064, 768);
         sceneFrame.setUpGUI();
         sceneFrame.setUpListeners();
+        sceneFrame.setUpAudio();
     }
 }

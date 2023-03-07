@@ -11,6 +11,11 @@ public class StrawHat implements DrawingObject{
         
         public Path2D.Double path;
 
+        /*
+        To render the top part of the straw hat:
+        https://www.desmos.com/calculator/ebdtbxgbq0
+        **/
+
         public HatTop(double x, double y, float scale){
             path = new Path2D.Double();
             path.moveTo(x+0,y+(scale*25));

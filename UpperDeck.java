@@ -32,7 +32,7 @@ public class UpperDeck implements DrawingObject{
         backSail = new Sail(x+(scale*80.3), y+(scale*150), scale*0.9f);
         
         watchtower = new Square(x+(scale*247), y+(scale*224.3), (scale*60), (scale*30), new Color(196,167,128));
-        // rounded rectangle watchtower hat
+        
         watchtowerHat = new Square(x+(scale*247), y+(scale*194.3), (scale*60), (scale*30), new Color(255, 219, 118));
         watchtowerHatStripe = new Square(x+(scale*267), y+(scale*194.3), (scale*20), (scale*35), new Color(127, 2, 2));
 
@@ -70,7 +70,6 @@ public class UpperDeck implements DrawingObject{
         jollyRoger2.draw(g2d);
     } 
     public static void animateFlag(){
-        // System.out.printf("animateFlag good %d\n",flagVal);
         flagVal ^= 1;
     }
 }

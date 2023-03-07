@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.sound.sampled.*;
+import java.io.IOException;
+import java.io.File;
 
 public class SceneFrame{
     private JFrame frame;
@@ -31,6 +34,26 @@ public class SceneFrame{
         frame.pack();
 
         frame.setVisible(true);
+    }
+
+    /** Timer and TimeListener tutorials:
+     https://docs.oracle.com/javase/7/docs/api/javax/swing/Timer.html
+     https://www.youtube.com/watch?v=CQi7XorjECs
+
+     Audio and BGM tutorials:
+     https://stackoverflow.com/questions/26305/how-can-i-play-sound-in-java
+    */
+    public static void setUpAudio(){
+        try{
+            File file = new File("WeAre.wav");
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+		    Clip clip = AudioSystem.getClip();
+		    clip.open(audioStream);
+            clip.start();
+         }
+        catch(Exception e){
+            System.out.println("e");
+        }
     }
     private class TimeListener implements ActionListener{
         @Override
