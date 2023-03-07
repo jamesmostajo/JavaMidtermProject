@@ -25,4 +25,14 @@ public class ThousandSunny implements DrawingObject{
     public void adjustSz(float dSz){
         shipSz += dSz;
     }
+    public void adjustY(double dy){
+        shipY += dy;
+    }
+    public double getSz(){
+        return shipSz;
+    }
+    public void flagAnimate(){
+        // System.out.println("flagAnimate good");
+        sailsAndPosts.animateFlag();
+    }
 }

@@ -2,6 +2,9 @@ import java.awt.geom.*;
 import java.awt.*;
 
 public class UpperDeck implements DrawingObject{
+    private double x, y;
+    private float scale;
+
     public Sail frontSail;
     public Sail backSail;
 
@@ -19,7 +22,13 @@ public class UpperDeck implements DrawingObject{
     public JollyRoger jollyRoger1;
     public JollyRoger jollyRoger2;
 
+    public static int flagVal = 0;
+
     public UpperDeck(double x, double y, float scale){
+        this.x = x;
+        this.y = y;
+        this.scale = scale;
+
         frontSail = new Sail(x+(scale*50), y+(scale*250), scale);
         backSail = new Sail(x+(scale*80.3), y+(scale*150), scale*0.9f);
         
@@ -29,7 +38,7 @@ public class UpperDeck implements DrawingObject{
         watchtowerHatStripe = new Square(x+(scale*267), y+(scale*194.3), (scale*20), (scale*35), new Color(127, 2, 2));
 
         flagA = new Square(x+(scale*265),y+(scale*159.3),(scale*35), Color.BLACK);
-        flagB = new Square(x+(scale*290),y+(scale*164.3),(scale*35), Color.BLACK);
+        
 
         flagpole = new Line(x+(scale*291.4), y+(scale*124.3), x+(scale*291.4), y+(scale*150.7), scale*7.5f, new Color(147,119,0));
 
@@ -40,6 +49,14 @@ public class UpperDeck implements DrawingObject{
         jollyRoger2 = new JollyRoger(x+(scale*300), y+(scale*85), (scale*0.15f));
     }
     public void draw(Graphics2D g2d){
+        // i place it here to animate
+        
+        if (flagVal == 0){
+            flagB = new Square(x+(scale*290),y+(scale*164.3),(scale*35), Color.BLACK);
+        }else if (flagVal == 1){
+            flagB = new Square(x+(scale*290),y+(scale*155.3),(scale*35), Color.BLACK);
+        }
+
         backSail.draw(g2d);
         frontSail.draw(g2d);
         watchtowerHat.draw(g2d);
@@ -52,5 +69,9 @@ public class UpperDeck implements DrawingObject{
 
         jollyRoger1.draw(g2d);
         jollyRoger2.draw(g2d);
-    }   
+    } 
+    public static void animateFlag(){
+        // System.out.printf("animateFlag good %d\n",flagVal);
+        flagVal ^= 1;
+    }
 }

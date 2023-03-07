@@ -6,23 +6,18 @@ public class SceneFrame{
     private JFrame frame;
     private int height, width;
 
-    private JButton left;
-    private JButton scaleUp;
-    private JButton scaleDown;
-    private JButton right;
-
-
     private SceneCanvas sCanvas;
+
+    private Timer bounceTimer;
+    private Timer scaleTimer;
+    private Timer flagTimer;
+    private Timer cloudTimer;
+    private double rad = 0;
 
     public SceneFrame(int w, int h){
         width = w; height = h;
         frame = new JFrame();
         sCanvas = new SceneCanvas(width, height);
-        
-        left = new JButton("left");
-        scaleUp = new JButton("front");
-        scaleDown = new JButton("back");
-        right = new JButton("right");
     }
     public void setUpGUI(){
         Container cp = frame.getContentPane();
@@ -30,45 +25,63 @@ public class SceneFrame{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Midterm Project - Mostajo, James Ivan - 224396"); 
 
-        JPanel buttonsPanel = new JPanel();
-        buttonsPanel.setLayout(new GridLayout(1,4));
-        buttonsPanel.add(left);
-        buttonsPanel.add(scaleUp);
-        buttonsPanel.add(scaleDown);
-        buttonsPanel.add(right);
-
-        cp.add(buttonsPanel, BorderLayout.SOUTH);
-        cp.add(sCanvas, BorderLayout.CENTER);
-        // frame.pack();
+        frame.add(sCanvas);
+        frame.pack();
 
         frame.setVisible(true);
     }
-    private class ButtonListener implements ActionListener{
+    // private class ButtonListener implements ActionListener{
+    //     @Override
+    //     public void actionPerformed(ActionEvent ae){
+    //         Object o = ae.getSource();
+    //         if (o == left){
+    //             sCanvas.getShip().adjustX(-100);
+    //             sCanvas.repaint();
+    //             // System.out.println("left");
+    //         }else if (o == right) {
+    //             sCanvas.getShip().adjustX(100);
+    //             sCanvas.repaint();
+    //             // System.out.println("right");
+    //         }else if (o == scaleUp){
+    //             sCanvas.getShip().adjustSz(0.05f);
+    //             sCanvas.repaint();
+    //         }else if (o == scaleDown){
+    //             sCanvas.getShip().adjustSz(-0.05f);
+    //             sCanvas.repaint();
+    //         }
+    //     }
+    // }
+    private class TimeListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent ae){
             Object o = ae.getSource();
-            if (o == left){
-                sCanvas.getShip().adjustX(-100);
+            if (o == bounceTimer){
+                rad += 0.1;
+                double size = sCanvas.getShip().getSz();
+                sCanvas.getShip().adjustY(Math.sin(rad)*size*2);
+                sCanvas.getShip().adjustX(-0.1);
                 sCanvas.repaint();
-                // System.out.println("left");
-            }else if (o == right) {
-                sCanvas.getShip().adjustX(100);
+            }else if (o == scaleTimer){
+                sCanvas.getShip().adjustSz(0.0001f);
                 sCanvas.repaint();
-                // System.out.println("right");
-            }else if (o == scaleUp){
-                sCanvas.getShip().adjustSz(0.05f);
-                sCanvas.repaint();
-            }else if (o == scaleDown){
-                sCanvas.getShip().adjustSz(-0.05f);
+            }else if (o == flagTimer){
+                sCanvas.getShip().flagAnimate();
+                sCanvas.repaint();  
+            }else if (o == cloudTimer){
+                sCanvas.getBG().adjustX(0.25);
                 sCanvas.repaint();
             }
         }
     }
-    public void setUpButtonListener(){
-        ButtonListener bl = new ButtonListener();
-        left.addActionListener(bl);
-        right.addActionListener(bl);
-        scaleUp.addActionListener(bl);
-        scaleDown.addActionListener(bl);
+    public void setUpListeners(){
+        TimeListener tl = new TimeListener();
+        bounceTimer = new Timer(100, tl);
+        bounceTimer.start();
+        scaleTimer = new Timer(10, tl);
+        scaleTimer.start();
+        flagTimer = new Timer(1000, tl);
+        flagTimer.start();
+        cloudTimer = new Timer(100,tl);
+        cloudTimer.start();
     }
 }
