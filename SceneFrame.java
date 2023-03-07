@@ -12,6 +12,8 @@ public class SceneFrame{
     private Timer scaleTimer;
     private Timer flagTimer;
     private Timer cloudTimer;
+    private Timer waveTimer;
+    private Timer addNewWavesTimer;
     private double rad = 0;
 
     public SceneFrame(int w, int h){
@@ -62,13 +64,21 @@ public class SceneFrame{
                 sCanvas.getShip().adjustX(-0.1);
                 sCanvas.repaint();
             }else if (o == scaleTimer){
-                sCanvas.getShip().adjustSz(0.0001f);
+                sCanvas.getShip().adjustSz(0.0002f);
                 sCanvas.repaint();
             }else if (o == flagTimer){
                 sCanvas.getShip().flagAnimate();
                 sCanvas.repaint();  
             }else if (o == cloudTimer){
-                sCanvas.getBG().adjustX(0.25);
+                sCanvas.getBG().adjustX(0.45);
+                sCanvas.repaint();
+            }else if (o == waveTimer){
+                for(Line l: sCanvas.getWave().getList()){
+                    l.animateLine(5);
+                }
+                sCanvas.repaint();
+            }else if (o == addNewWavesTimer){
+                sCanvas.getWave().addNewWaveLines();
                 sCanvas.repaint();
             }
         }
@@ -83,5 +93,9 @@ public class SceneFrame{
         flagTimer.start();
         cloudTimer = new Timer(100,tl);
         cloudTimer.start();
+        waveTimer = new Timer(100,tl);
+        waveTimer.start();
+        addNewWavesTimer = new Timer(250, tl);
+        addNewWavesTimer.start();
     }
 }

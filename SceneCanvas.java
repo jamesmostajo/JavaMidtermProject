@@ -10,6 +10,7 @@ public class SceneCanvas extends JComponent{
     
     public ThousandSunny thousandSunny;
     public Background bg;
+    public Wave wave;
 
     public SceneCanvas(int w, int h){
         width = w; height = h;
@@ -17,6 +18,7 @@ public class SceneCanvas extends JComponent{
         setPreferredSize(new Dimension(width,height));
 
         thousandSunny = new ThousandSunny(400,40,0.35f);
+        wave = new Wave(150);
     }
     protected void paintComponent(Graphics g){
         Graphics2D g2d = (Graphics2D) g;
@@ -27,6 +29,7 @@ public class SceneCanvas extends JComponent{
         bg = new Background();
         bg.draw(g2d);
 
+        wave.draw(g2d);
         thousandSunny.draw(g2d);
         
     }
@@ -36,6 +39,9 @@ public class SceneCanvas extends JComponent{
     public Background getBG(){
         // System.out.println("getBG works");
         return bg;
+    }
+    public Wave getWave(){
+        return wave;
     }
 
 

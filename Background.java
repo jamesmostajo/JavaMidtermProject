@@ -16,14 +16,14 @@ public class Background implements DrawingObject{
     }
     public void draw(Graphics2D g2d){
         g2d.setPaint(sky);
-        Rectangle2D.Double horizon = new Rectangle2D.Double(0,0,1064,460.8);
+        Rectangle2D.Double horizon = new Rectangle2D.Double(0,0,1064*3,460.8);
         g2d.fill(horizon);
 
         cloud = new Cloud(cloudX,0,1f);
         cloud.draw(g2d);
         
         g2d.setPaint(sea);
-        Rectangle2D.Double seas = new Rectangle2D.Double(0, 307.2, 1064, 768);
+        Rectangle2D.Double seas = new Rectangle2D.Double(0, 307.2, 1064*3, 768);
         g2d.fill(seas);
 
         Line seaLine = new Line(0, 307.2, 1064, 307.2, 1, new Color(96,192,226));
@@ -31,9 +31,7 @@ public class Background implements DrawingObject{
 
     }
     public static void adjustX(double dx){
-        // System.out.println("adjustX works");
         cloudX += dx;
-        // System.out.println(cloudX);
     }
     
 }

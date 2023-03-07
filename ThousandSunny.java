@@ -28,7 +28,7 @@ public class ThousandSunny implements DrawingObject{
     public void adjustY(double dy){
         shipY += dy;
     }
-    public double getSz(){
+    public float getSz(){
         return shipSz;
     }
     public void flagAnimate(){
