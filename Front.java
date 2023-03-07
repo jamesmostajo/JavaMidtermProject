@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.geom.*;
 
 public class Front implements DrawingObject{
     public double x;

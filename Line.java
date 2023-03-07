@@ -1,7 +1,5 @@
 import java.awt.geom.*;
-import javax.swing.*;
 import java.awt.*;
-import java.util.Random;
 
 public class Line implements DrawingObject{
     

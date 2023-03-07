@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.geom.*;
 
 public class Cloud implements DrawingObject{
     private double cloudX;

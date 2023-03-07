@@ -1,8 +1,5 @@
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Random;
-import javax.swing.*;
-import java.awt.event.*;
+import java.util.*;
 
 public class Wave implements DrawingObject{
     public ArrayList<Line> waveLines;

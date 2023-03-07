@@ -1,5 +1,4 @@
 import java.awt.geom.*;
-import javax.swing.*;
 import java.awt.*;
 
 public class Circle implements DrawingObject{
@@ -14,7 +13,6 @@ public class Circle implements DrawingObject{
         xSize = sz; ySize = sz;
         color = c;
     }
-    
     // this creates an ellipse
     public Circle(double x, double y, double xsz, double ysz, Color c){
         xPos = x; yPos = y;

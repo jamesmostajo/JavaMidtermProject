@@ -32,27 +32,6 @@ public class SceneFrame{
 
         frame.setVisible(true);
     }
-    // private class ButtonListener implements ActionListener{
-    //     @Override
-    //     public void actionPerformed(ActionEvent ae){
-    //         Object o = ae.getSource();
-    //         if (o == left){
-    //             sCanvas.getShip().adjustX(-100);
-    //             sCanvas.repaint();
-    //             // System.out.println("left");
-    //         }else if (o == right) {
-    //             sCanvas.getShip().adjustX(100);
-    //             sCanvas.repaint();
-    //             // System.out.println("right");
-    //         }else if (o == scaleUp){
-    //             sCanvas.getShip().adjustSz(0.05f);
-    //             sCanvas.repaint();
-    //         }else if (o == scaleDown){
-    //             sCanvas.getShip().adjustSz(-0.05f);
-    //             sCanvas.repaint();
-    //         }
-    //     }
-    // }
     private class TimeListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent ae){

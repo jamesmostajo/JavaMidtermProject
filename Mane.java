@@ -1,6 +1,6 @@
-import javax.swing.*;
 import java.awt.geom.*;
 import java.awt.*;
+
 public class Mane implements DrawingObject{
     float scale;
     Path2D.Double mane = new Path2D.Double();
