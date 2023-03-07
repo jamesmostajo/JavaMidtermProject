@@ -17,9 +17,13 @@ of my program.
 
 import java.awt.*;
 
-// Gradient Tutorial from
-// https://kodejava.org/how-do-i-create-a-gradient-paint-in-java-2d/
+/** 
+This class creates the background gradeints and the background clouds,
+which also includes the cloud animations
 
+### Gradient Tutorial from:
+https://kodejava.org/how-do-i-create-a-gradient-paint-in-java-2d/
+**/
 public class Background implements DrawingObject{
     GradientPaint sky;
     GradientPaint sea;

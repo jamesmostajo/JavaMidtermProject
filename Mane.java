@@ -1,12 +1,33 @@
+/**
+This is a template for a Java file.
+@author James Ivan P. Mostajo (224396)
+@version March 7, 2023
+**/
+/*
+I have not discussed the Java language code in my program 
+with anyone other than my instructor or the teaching assistants 
+assigned to this course.
+I have not used Java language code obtained from another student, 
+or any other unauthorized source, either modified or unmodified.
+If any Java language code or documentation used in my program 
+was obtained from another source, such as a textbook or website, 
+that has been clearly noted with a proper citation in the comments 
+of my program.
+*/
 import java.awt.geom.*;
 import java.awt.*;
 
+/** 
+Mane class to draw the mane of the sunny
+drawn using the path2d class
+**/ 
+ 
 public class Mane implements DrawingObject{
     float scale;
     Path2D.Double mane = new Path2D.Double();
     public Mane(double x, double y, float scale){
         this.scale = scale;
-        // make it more editable
+
         mane.moveTo(x+scale*(149.0), y+scale*(232.0));
         mane.curveTo(x+scale*(149.0), y+scale*(232.0), x+scale*(97.0), y+scale*(272.0), x+scale*(31.0), y+scale*(237.0));
         mane.curveTo(x+scale*(31.0), y+scale*(237.0), x+scale*(63.0), y+scale*(243.0), x+scale*(87.0), y+scale*(208.0));
