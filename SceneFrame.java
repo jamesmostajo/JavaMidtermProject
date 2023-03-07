@@ -41,7 +41,7 @@ public class SceneFrame{
      https://www.youtube.com/watch?v=CQi7XorjECs
 
      Audio and BGM tutorials:
-     https://stackoverflow.com/questions/26305/how-can-i-play-sound-in-java
+     https://www.youtube.com/watch?v=wJO_cq5XeSA
     */
     public static void setUpAudio(){
         try{

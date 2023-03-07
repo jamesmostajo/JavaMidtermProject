@@ -17,6 +17,7 @@ public class Sail implements DrawingObject{
         hanger = new Square(x+(scale*64.40), y+(scale*4.30), (scale*326), (scale*10), new Color(147,119,0));
     }
     public void draw(Graphics2D g2d){
+        g2d.setStroke(new BasicStroke(1));
         hanger.drawOutline(g2d);
         mast.drawOutline(g2d);
         g2d.setColor(Color.WHITE);
