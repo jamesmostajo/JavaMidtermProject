@@ -17,21 +17,16 @@ public class Line implements DrawingObject{
         xEnd = x2; yEnd = y2;
         thickness = brushSize;
         color = c;
-        line = new Line2D.Double(xStart, yStart, xEnd, yEnd);
+       
     }
-    public Line(double xStart, double yStart){
-        // Only using this for wave so color could be defaulted
-        color = Color.WHITE;
-        Random rand = new Random();
-        double randLength = rand.nextDouble() * 250;
-        thickness = rand.nextFloat()*2;
-        line = new Line2D.Double(xStart, yStart, xStart+ randLength, yStart);
-    }
-
     public void draw(Graphics2D g2d){
         g2d.setColor(color);
         g2d.setStroke(new BasicStroke(thickness));
+        line = new Line2D.Double(xStart, yStart, xEnd, yEnd);
         g2d.draw(line);
     }
-    
+    public void animateLine(double dx){
+        xStart += dx;
+        xEnd += dx;
+    }
 }
